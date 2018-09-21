@@ -1,0 +1,12 @@
+执行到下一个断点位置 c continue
+条件断点设置  b 23 if x==10
+列出断点信息 info b
+删除断点 delete 1 (number of breakpoint)
+保存断点设置到文件debug时自动加载 save breakpoint filename.bp 加载的时候 gdb xx -x filename.bp
+
+display a@4 显示数组前四位置的值
+bt 列出栈调用信息
+
+ddd 2 dimension array display: (*M)@6,it will display M colums=0 to max and 6  rows
+    (((*p)@6)[5]).rows display struct array
+    pdb pythonwin stepover 可以用来当continue使用很方便的

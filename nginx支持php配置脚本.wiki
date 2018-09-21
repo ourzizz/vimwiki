@@ -1,0 +1,57 @@
+
+nginx /etc/nginx/sites-available/default
+# You may add here your
+server {
+    listen 443;
+    server_name www.alemao.com; #填写绑定证书的域名
+    ssl on; 
+    ssl_certificate /etc/nginx/cert/1_www.alemao.club_bundle.crt;
+    ssl_certificate_key /etc/nginx/cert/2_www.alemao.club.key;
+    ssl_session_timeout 5m; 
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #按照这个协议配置
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;#按照这个套件配置
+    ssl_prefer_server_ciphers on; 
+    location / { 
+    ¦   root   /var/www/; #站点目录
+    ¦   ¦   index index.php index.html index.htm ;
+    }   
+
+    location ~ \.php$ {
+    ¦   root /var/www/;
+    ¦   fastcgi_pass 127.0.0.1:9000;
+    ¦   fastcgi_index index.php;
+    ¦   fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    ¦   include fastcgi_params;
+    }   
+}
+
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server ipv6only=on;
+
+    root /usr/share/nginx/html;
+    index index.php index.html index.htm ;
+
+    # Make site accessible from http://localhost/
+    server_name localhost;
+
+    location / { 
+    # First attempt to serve request as file, then
+    # as directory, then fall back to displaying a 404.
+    ¦   try_files $uri $uri/ =404;
+    # Uncomment to enable naxsi on this location
+    # include /etc/nginx/naxsi.rules
+}
+location ~ \.php$ {
+    #fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    # NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+
+    # With php5-cgi alone:
+    # With php5-fpm:
+    #fastcgi_pass unix:/var/run/php5-fpm.sock;
+    root /var/www/;
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index index.php;
+    fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    include fastcgi_params;
+}

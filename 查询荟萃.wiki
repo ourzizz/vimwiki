@@ -1,0 +1,15 @@
+`公务员查分，查询成绩表和职位表招考人数确定是都进入面试`
+{{{
+SELECT info . * , epost.zkrs *3
+FROM gwycf.info, gwycf.epost
+WHERE info.epost = epost.epostname
+AND info.ecode = epost.ecode
+AND info.rank <= epost.zkrs *3
+AND info.rank >0;
+}}}
+
+聚集函数和group by 还有order by的使用案例
+{{{
+select ksid, max(fileid) from ksfile group by ksid order by max(fileid);
+select kslist.* from ksfile,kslist where ksfile.ksid=kslist.ksid and kslist.kstypeid=3 group by ksfile.ksid order by max(ksfile.fileid) desc;
+}}}

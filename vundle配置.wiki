@@ -1,0 +1,2 @@
+set rtp+=~/.vim/bundle/vundle.vim #这里指明vundle.vim所在的路径,如果到路径下没找到vundle.vim目录拷贝过去
+call vundle#rc('~/vimfiles/bundle/vundle')#这里指明插件所在目录必须到所有插件所在的目录

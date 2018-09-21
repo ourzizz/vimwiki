@@ -1,0 +1,4 @@
+use bjks
+SELECT ksmsg.*, kstype.typename FROM ksmsg,ksfile,kslist,kstype
+where ksmsg.fileid=ksfile.fileid and kslist.ksid=ksfile.ksid and kslist.kstypeid=kstype.kstypeid;
+全部表连接

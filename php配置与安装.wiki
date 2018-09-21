@@ -1,0 +1,2 @@
+php.ini的位置 locate php.ini
+[[php-cgi+php-fpm]]

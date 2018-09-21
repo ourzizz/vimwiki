@@ -1,0 +1,65 @@
+* *interpret*      解释；理解；口译；诠释；体现
+* *acquired*       后天的，通过学习获得的
+* *overhaul*       大修，全面检查
+* cascade        串联
+* exactly        准确，恰恰，到底是
+* *proportional*   比例的，相称的，均衡的
+* *canonical*      权威的,经典的
+* *toggle*         转换键
+* *decorate*       装饰  
+* *merge*          融入融合
+* *mutable*        易变的，性情不定的 
+* *transclusion*   嵌入包含
+* *particular*     特别的，特殊的  
+* *emphasis*       强调着重
+* *principle*      原则、准则、原理
+* *switch*      aaa
+* *origin*         原点、起源
+* *filter*         过滤
+* fundamental    基本的重要的
+* characteristics 特征
+* collection     采集，征收
+* responds       回应
+* consume       消费,消耗
+* value         价值
+* valuable      珍贵的
+* rotates       旋转
+* landscape     景观，横向
+* portrait orientation 纵向
+* obscured      模糊
+* transparent   透明
+* transient     暂时的
+* manipulate    操作，操纵
+
+|                     |                        |
+|---------------------|------------------------|
+| Redeemer            | 救世主                 |
+| statue              | 雕像                   |
+| movement            | 运动                   |
+| mature              | 成熟的                 |
+| discipline          | 有条理的               |
+| assembly            | 装配 集会              |
+| manufactury         | 制造厂                 |
+| critical            | 关键的批评的及其重要的 |
+| reliable            | 可靠的                 |
+| factor              | 因素                   |
+| endeavor            | 努力                   |
+| represent           | 代表                   |
+| intensive           | 加强的集中的           |
+| de facto            | 事实上的               |
+| facilitate          | 促进了                 |
+| investor            | 投资者                 |
+| invest/investment   | 投资                   |
+| stackholder         | 股东                   |
+| viability           | 生存力                 |
+| expressive          | 表达                   |
+| distribute          | 分配散布               |
+| distribute web-base | 分布式web              |
+| embedded system     | 嵌入式                 |
+| combat              | 搏斗                   |
+| conceptual          | 观念                   |
+| interpreter         | 解释器                 |
+
+
+
+

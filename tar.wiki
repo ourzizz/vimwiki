@@ -1,0 +1,2 @@
+tar zvxf filename.tar          解压
+tar czvf filename.tar dirname  压缩

@@ -1,0 +1,13 @@
+* [[github]]
+* [[grep正则]]
+* [[sed]]
+* [[printf awk]]
+* [[u盘的挂载]]
+* [[diff]]
+* [[awk]]
+* [[sort]]
+* http://www.cnblogs.com/orez88/articles/1874594.html xargs用法
+* http://blog.tpircsboy.com/tech/bash-skills-part1/ bash简化操作，减少敲击命令
+* [[join]]
+* [[tar]]
+* [[chown]]

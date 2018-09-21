@@ -1,0 +1,16 @@
+php-cgi 
+php-cgi是早期php官方出品的fastcgi管理器，不支持平滑重启，改了php.ini就要kill掉原来的php-cgi再重新启动才能生效；不支持动态worker调度，只能一开始指定要起几个worker。
+php-fpm是从5.3.3才加入的fastcgi进程管理器，加入了动态调度功能，可以根据请求来访压力变化动态增减worker进程数量；支持reload指令，让worker进程在完成当前请求后重启，并应用php.ini新配置。
+
+php不响应，执行 netstat -antp 检查有没有9000端口被占用或者是没有启动
+           php-cgi -b 127.0.0.1:9000 &
+
+
+php-cgi -b 127.0.0.1:9000 
+不知道是9000端口被占用还是cgi进程死掉,php解释服务每隔一段时间就没了 
+php-cgi -b 127.0.0.1:9000 这条命令可以指定php-cgi多个监听端口 
+思路：先杀掉这个进程，到前台看下错误提示，想办法看看系统日志 
+草前台错误bad gate 502 不知道什么意思 
+ 
+解决办法：/usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -C 5 -u www-data -g www-data -f /usr/bin/php5-cgi -P /var/run/fastcgi-php.pid 
+当fcgi挂掉后重启fcgi 可进行5次 

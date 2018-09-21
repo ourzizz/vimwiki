@@ -1,0 +1,7 @@
+安装splinter
+xlrd
+cd 到安装目录，直接python setup.set install
+解决sqlserver乱码 print row[0].encode('latin1').decode('gbk')
+mysql 为utf8 python2.7 pyMysqldb 显示中文呢为乱码：db=MySQLdb.connect(user='root',charset='utf8')得以解决
+解决生成json中文乱码
+jsonFile.write(json.dumps(contentByPage, ensure_ascii=False).decode('utf8')) 

@@ -1,0 +1,2 @@
+https://blog.csdn.net/qq_31201781/article/details/78905304
+修改 就是将NGInx中的证书放到服务器上，然后修改 /etc/nginx/sites-available/default 配置文件直接用自己的吧！

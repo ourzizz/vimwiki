@@ -1,0 +1,36 @@
+获取https请求
+onLoad: function () {
+    var that = this
+    wx.request({
+    ¦ url: 'https://www.alemao.club/~gListJson.php',
+    ¦ headers: { 
+    ¦   'Content-Type': 'application/json'
+    ¦ },
+    ¦ success: function (res) {
+    ¦   //将获取到的json数据，存在名字叫list的这个数组中
+    ¦   that.setData({
+    ¦   ¦ list: res.data,
+    ¦   ¦ //res代表success函数的事件对，data是固定的，list是数组
+    ¦   })
+    ¦ }
+    })
+  },
+前端
+<view class="container" wx:for="list" wx:key="list">
+<navigator class="test-item" url="../out/out?webaddress=item.webaddress">
+  <view>item.pubtime:item.msgcontent</view> 
+    </navigator>
+</view>
+
+跨页面传值
+前一个页面
+<navigator url="../kaoshi/kaoshi?ksid=jjs" open-type="navigate" class="navigation">
+
+后一个页面
+<view > 
+<text>ksid</text>
+</view>
+后一个页面的 Json 
+onLoad: function (options) {
+    this.setData({ ksid: options.ksid })
+  },

@@ -1,0 +1,7 @@
+马隔壁感觉腾讯的文档衔接不好，项目讲解不好wafer前后端都有，也是php后端的，正好拿过来 直接部署开始研究。
+
+wx.setStorage 微信的内置接口 用于缓存信息
+wx.getStorage 微信的内置接口 用于获取缓存信息
+关于非qcloud服务器的登录
+    sdk里面定义登录默认是通过$useQcProxy 为 true，sdk 将会使用腾讯云的 QcloudSecretId 和 QcloudSecretKey 获取 session key
+    通过grep得到只有在AuthAPI.php有这个变量的调用，我们直接将其在末端设置为false，这样就不需要QcloudSecretId登录了

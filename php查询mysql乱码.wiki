@@ -1,0 +1,1 @@
+if (!$mysqli->set_charset("utf8")) { //这句有用，官方文档果然好用

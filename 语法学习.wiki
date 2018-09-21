@@ -1,0 +1,47 @@
+
+修改表结构，增加行<br>
+ALTER TABLE `gwycf`.`info` ADD COLUMN `idno` VARCHAR(18) NOT NULL;<br>
+无重复select<br>
+select distinct .. from<br>
+
+考试中心--电话联系表
+create table contactinfo(
+`contactid` int(11)  not null AUTO_INCREMENT,
+`ksname` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+`phone` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+`partname` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+`type` varchar(50) COLLATE utf8mb4_unicode_ci,
+`kstypeid` INT NOT NULL,
+PRIMARY KEY(`contactid`),
+CONSTRAINT fk_type FOREIGN KEY (`kstypeid`) references kstype(`kstypeid`) 
+on delete cascade  
+on update cascade
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ;
+
+插入数据语法
+INSERT INTO 表名 （字段名1，字段名2，...） VALUES(值1，值2，...);
+删除语法
+DELETE FROM TABLE_NAME where COLUM = Value;
+表格建立以后Kj
+
+七天内更新的文件
+SELECT kstype.* ,count(*) as newfile
+FROM kstype,ksfile,kslist
+WHERE 
+kstype.kstypeid=kslist.kstypeid and kslist.ksid=ksfile.ksid
+AND datediff(curdate(),ksfile.pubtime)<8
+group by  kstypeid
+
+group by,having
+意思就是分组查询完成后，用having+条件把符合条件的组选出来
+查询平均成绩大于等于90分的学生学好和平均成绩
+错误案例
+select Sno,AVG(Grade)
+from SC
+where AVG(Grade)>=90
+group by Sno;
+正确方法
+select Sno,AVG(Grade)
+from SC
+group by Sno;
+having AVG(Grade)>=90

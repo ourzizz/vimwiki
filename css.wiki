@@ -1,0 +1,43 @@
+选择器
+#选择id  .选择类 标签.class:标签中类名为class的被选中
+css 代码出现的位置
+1单独css后缀文件 2内部样式表:在head处统一写 内联样式:直接写在标签中
+多重样式
+起作用的是由近及远 一般情况下，优先级如下：
+内联样式）Inline style > （内部样式）Internal style sheet >（外部样式）External style sheet > 浏览器默认样式
+优先级顺序
+下列是一份优先级逐级增加的选择器列表：
+通用选择器（*）
+元素(类型)选择器
+类选择器
+属性选择器
+伪类
+ID 选择器
+内联样式
+
+css背景属性
+Property    描述
+background  简写属性，作用是将背景属性设置在一个声明中。
+background-attachment   背景图像是否固定或者随着页面的其余部分滚动。
+background-color    设置元素的背景颜色。
+background-image    把图像设置为背景。
+background-position 设置背景图像的起始位置。
+background-repeat   设置背景图像是否及如何重复。
+ 
+背景颜色作用范围是 content padding border
+padding margin border 都具有 top-right-bottm-left 顺序属性
+设置边框宽度:border-width:
+border-top-width
+边框默认是none所以是没有的,width必须在边框样式声明后才能指定
+
+内联元素就是不换行的，连续显示的
+块级元素是换行的，一块完了换行另外起
+通过用dispaly:inline/block;改变他们这种属性
+
+水平居中对齐一个元素，可以使用margin:auto; 如果没有设置 width 属性(或者设置 100%)，居中对齐将不起作用。
+text-align: center;文本居中对齐
+要让图片居中对齐, 可以使用 margin: auto; 并将它放到 块 元素中:
+垂直居中 
+ 上下padding一样就居中了
+ 如果要水平和垂直都居中，可以使用 padding 和 text-align: center:
+ 通过line-height行间距设置居中

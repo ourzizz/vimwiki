@@ -1,0 +1,12 @@
+Node.js是一个Javascript运行环境(runtime environment)，发布于2009年5月，由Ryan Dahl开发，实质是对Chrome V8引擎进行了封装。
+Node.js对一些特殊用例进行优化，提供替代的API，使得V8在非浏览器环境下运行得更好。
+就是说Nodejs能让javascript在服务器中运行
+小程序申领成功后，腾讯会免费分配开发环境
+包括 域名证书 mysql (php+nginx)
+在云管理界面的微信小程序栏目可以看到开发环境和生产环境
+开发环境是腾讯免费给的只能测试
+生产环境要付费和自己配置服务器 解析域名
+[[官方文档wafer阅读]]
+[[https请求demo]]
+[[CodeIgnitor]]
+[[mysqlScript]]

@@ -1,0 +1,2 @@
+Got a packet bigger than‘max_allowed_packet’bytes
+办法show VARIABLES like ‘%max_allowed_packet%’; 修改set global max_allowed_packet = 210241024*10

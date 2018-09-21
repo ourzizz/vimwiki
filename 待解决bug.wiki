@@ -1,0 +1,10 @@
+18-09-05 
+http://alemao.club/server/index.php?/Demo/show_article/ 会显示全部文件内容
+正确不给参数应该404forbidden
+
+18-09-08 
+done mysql 文章更新会被截断，或者报错，bug没有找到 ,bug在于workbeach的insert语句，直接在服务器上写sql脚本倒入即可
+
+filelist 忘记设置autoincrement 每次填写都要手动添加，要解决
+web-view 如何插入房子键
+文章形象太丑，系统来一遍css，学习以下前端框架boststrmp拿来优化文件页面
