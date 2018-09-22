@@ -1,0 +1,56 @@
+教程务必写仔细，也是为以后的自己积德啊
+腾讯云提供了lnmp镜像，我选择了oneinstack总体来说节约了很多精力和时间配置服务器
+1在腾讯云端设置重启，找到lnmp镜像选好，输入密码(后面开机要用)点击重装就行
+2进入系统一脸蒙蔽，mysql密码都不知道，不要紧进入服务器首页，上面有配置手册连接
+3手册里说 cd /root/oneinstack ,但是会提示permission deny，直接chmod -R 777 /root
+ 进去后按照手册一步一步来，修改mysql密码
+4将腾讯下发的证书和key放到/etc/nginx下，可以使其他目录，但是要在配置文件中写清楚
+4重点是nginx的配置，经过实验oneinstack/conf/nginx.conf 这个配置文件没有卵用
+ 直接去nginx安装目录 sudo vim /usr/local/nginx/conf/nginx.cnf ,编辑前一定要把配置文件备份
+ 因为要启用ssl，在配置文件中加入如下代码
+ server {
+    listen       443 ssl;
+    server_name  _;
+    ssl_certificate /etc/nginx/cert/1_www.alemao.club_bundle.crt;
+    ssl_certificate_key /etc/nginx/cert/2_www.alemao.club.key;
+
+    ssl_session_cache    shared:SSL:1m;
+    ssl_session_timeout  5m;
+
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers  on;
+    root /data/wwwroot/default;
+
+    location /nginx_status {
+       stub_status on;
+       access_log off;
+       allow 127.0.0.1;
+       deny all;
+    }
+    location ~ [^/]\.php(/|$) {
+       #fastcgi_pass remote_php_ip:9000;
+       fastcgi_pass unix:/dev/shm/php-cgi.sock;
+       fastcgi_index index.php;
+       include fastcgi.conf;
+    }
+    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|flv|mp4|ico)$ {
+       expires 30d;
+       access_log off;
+    }
+    location ~ .*\.(js|css)?$ {
+       expires 7d;
+       access_log off;
+    }
+    location ~ /\.ht {
+       deny all;
+    }
+  }
+
+这时候nginx restart 会报错，这是因为要重新load配置文件
+用下面命令：nginx -s reload
+nginx: [error] open() "/alidata/server/nginx/logs/nginx.pid" failed (2: No such file or directory) 收到错误
+nginx -s reload is only used to tell a running nginx process to reload its config. After a stop, you don't have a running nginx process to send a signal to. Just run nginx (possibly with a -c /path/to/config/file)
+得吃咯:sudo /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+浏览器直接打开https 可以啦
+sudo /usr/local/nginx/sbin/nginx -s reload
+

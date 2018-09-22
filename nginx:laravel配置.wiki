@@ -1,0 +1,49 @@
+本教程使用的是oneinstack镜像安装的lnmp环境
+一 先安装composer 参考https://blog.csdn.net/yc1022/article/details/54580716
+下载composer.phar
+$ wget https://getcomposer.org/composer.phar
+重命名文件composer.phar 为 composer
+$ mv composer.phar composer
+
+$ chmod +x composer
+现在可以通过./composer 命令运行composer，但这只仅限于在当前目录运行。要想全局使用，composer ，要设置把它为全局变量。找到composer文件，把它移到/usl/local/bin 目录，这样就可以在全局使用composer 命令。
+$ sudo mv composer /usr/local/bin
+在终端输入$ composer 会有如下显示，表明安装成功
+二、使用 Composer 安装 Laravel
+
+    使用 Composer 下载 Laravel 安装包：
+  *  composer global require "laravel/installer"
+
+    请确保 PATH 环境变量已经添加了 composer/vendor/bin 目录，这样，可执行文件 laravel 就能被你的系统检测到了。通过以上安装composer，我本地的要添加的composer目录为：
+    /home/yan/.config/composer/vendor/bin
+    因此我把此bin目录添加到/etc/profile 和 ~/.bashrc文件中：
+    export PATH=/home/yan/.config/composer/vendor/bin:$PATH
+    执行source /etc/profile 和source ~/.bashrc让环境立即生效
+    直接运行不行，可以采取~/.config/composer/vendor/bin/laravel 来运行
+
+一旦安装完成后，可以在终端$ laravel -v
+可以使用 laravel new 命令在你指定的目录中建立一份全新安装的 Laravel 应用。例如： 
+laravel new blog 命令会在当前目录下建立一个名为 blog 的目录， 
+此目录里面存放着全新安装的 Laravel ，并且所有依赖包也已经安装好了。此方法的安装速度会比通过 Composer 安装快很多。
+
+这里要用php7.1以上的版本，去/root/oneinstack/ 执行changephpversion 就可以了
+如果提示proc_open被禁止，去配置 /usr/local/php*/php.ini,将disable_function 一行注释掉,在执行
+
+三、配置NGINX 
+   sudo vim /usr/local/nginx/conf/nginx.cnf
+   在server中加入
+   location / {
+    try_files $uri $uri/ /index.php?$query_string;
+   }      
+   回到终端，执行sudo /usr/local/nginx/sbin/nginx -s reload 载入配置文件
+   浏览器访问记得要到laravel项目的public目录 如 url.com/blog/public
+   能显示内容，但是会提示permission deny
+   索性给 chmod 777 -R storage 
+
+至此NGINX+laravel 配置完成，可以开始学习了
+当前站点已经有其他项目了，现在不能将根目录指向laravel，
+解决问题还是修改
+sudo vim /usr/local/nginx/conf/nginx.cnf
+location / {
+   try_files $uri $uri/ /blog/pulbic/index.php?$query_string;
+}      

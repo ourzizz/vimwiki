@@ -1,3 +1,5 @@
 * [[新版nginx配置SSL证书（腾讯云）]]
 * [[nginx支持php配置脚本]]
 * [[nginx:NO_input_file_specified]]
+* [[nginx:oneinstack配置]]
+* [[nginx:laravel配置]]
