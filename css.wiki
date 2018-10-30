@@ -34,6 +34,19 @@ border-top-width
 块级元素是换行的，一块完了换行另外起
 通过用dispaly:inline/block;改变他们这种属性
 
+position
+指定元素的定位类型
+static 无特殊效果
+relative 相对定位元素的定位是相对其正常位置。相对于自己产生偏移
+fixed 直接定死在浏览器某个位置
+absolute 绝对定位脱离文档流， 定位使元素的位置与文档流无关，因此不占据空间。定位的元素和其他元素重叠。
+h2 {//定位都一样指定两个位置就可以确定了
+    position:absolute;
+    left:100px;
+    top:150px;
+}
+sticky 粘性定位的元素是依赖于用户的滚动，在 position:relative 与 position:fixed 定位之间切换。
+
 水平居中对齐一个元素，可以使用margin:auto; 如果没有设置 width 属性(或者设置 100%)，居中对齐将不起作用。
 text-align: center;文本居中对齐
 要让图片居中对齐, 可以使用 margin: auto; 并将它放到 块 元素中:
@@ -41,3 +54,11 @@ text-align: center;文本居中对齐
  上下padding一样就居中了
  如果要水平和垂直都居中，可以使用 padding 和 text-align: center:
  通过line-height行间距设置居中
+ 
+<img src="http://www.bijiekaoshi.com/public/images/fileimg/testrichtextimg.png" width="100%" alt="上海鲜花港 - 郁金香" />
+
+字体：font-style：italic；斜体
+        font-weight：bold；加粗
+        font-size：30px；大小
+        line-height：30px；行高
+        font-family：“SimHei”；字体

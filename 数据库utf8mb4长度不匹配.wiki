@@ -1,0 +1,1 @@
+://geektnt.com/laravel-5-4-migration-unique-key-is-too-long.html

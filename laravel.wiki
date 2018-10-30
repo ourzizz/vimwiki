@@ -1,0 +1,3 @@
+[[数据库utf8mb4长度不匹配]]
+创建Model php artisan make:model Article
+Model放在app目录下面

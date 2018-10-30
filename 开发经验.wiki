@@ -10,3 +10,11 @@ Node.js对一些特殊用例进行优化，提供替代的API，使得V8在非�
 [[https请求demo]]
 [[CodeIgnitor]]
 [[mysqlScript]]
+[[wxml]]
+navigator 无法跳转到首页index 需要设置open-type="reLaunch"
+经过测试如果 page data中有和wxml 双花括号内同名的变量，那么在setdata中进行绑定渲染后，data中的数据也获得了亦一样的值，所以不用再从新赋值
+
+有时候为了风格的统一，要消除buttom的边框，只能用下列方法
+button[class="sharebutton"]::after {
+  border: 0;
+} 

@@ -1,0 +1,7 @@
+获取当前循环的下标
+{{{
+<block wx:for="{{tabs}}" wx:key="*this" wx:for-index="idx">
+          <view class="weui-tab__content" hidden="{{activeIndex != idx}}">{{item[1]}}---{{idx}}</view>
+        </block>
+}}}
+本例中还解释了{\{ }\} 双花括号中可以一次写入多个绑定的数据
