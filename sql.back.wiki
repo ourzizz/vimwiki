@@ -13,3 +13,6 @@ PRIMARY KEY (`kaohao`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 }}}
+
+链接查询用户表 文件表 事件时间表
+select DISTINCT ksfile.fileid,ksfile.filetitle,eventtime.* from ksfile,eventtime,userhasfiles where eventtime.ksfileid = ksfile.fileid and ksfile.fileid=userhasfiles.fileid

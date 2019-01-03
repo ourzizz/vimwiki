@@ -13,3 +13,5 @@ AND info.rank >0;
 select ksid, max(fileid) from ksfile group by ksid order by max(fileid);
 select kslist.* from ksfile,kslist where ksfile.ksid=kslist.ksid and kslist.kstypeid=3 group by ksfile.ksid order by max(ksfile.fileid) desc;
 }}}
+
+SELECT COUNT(*) from ksfile,eventtime left outer join eventtime on(ksfile.fileid=eventtime.ksfileid) where ksfile.ksid =1;左外连接

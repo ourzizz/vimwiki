@@ -1,0 +1,1 @@
+需要修改两个文件 等目录下的config.php 以及application/config/database.php 中的相关的数据库名称

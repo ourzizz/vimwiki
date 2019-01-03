@@ -1,0 +1,10 @@
+ALTER TABLE STORE_FRONTINFO
+  ADD CONSTRAINT FK_STORE_FR_REFERENCE_STORE_AR FOREIGN KEY (AREAID)
+  REFERENCES STORE_AREA (AREAID);
+ ALTER TABLE goods
+      ADD CONSTRAINT goods_class_key FOREIGN KEY (class_id)
+      REFERENCES goods_class (class_id);
+     
+ALTER TABLE shop_cart 失败1215 原因是CAuth表中的open_id用了COLLAT utf8mb4_unicode_ci,建表的时候参照这个主键的类型也必须这么设置
+  ADD CONSTRAINT FK_CART_USER_GOODS FOREIGN KEY (open_id)
+  REFERENCES cSessionInfo (open_id); 

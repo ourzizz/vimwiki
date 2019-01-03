@@ -1,0 +1,2 @@
+navigator 无法跳转到首页index 需要设置open-type="reLaunch"
+navigateTo 用在js中触发页面跳转 参考 https://www.cnblogs.com/yaoyuqian/p/7967472.html

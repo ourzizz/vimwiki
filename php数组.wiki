@@ -1,0 +1,4 @@
+在数组中添加元素
+$a=array("red","green");
+array_push($a,"blue");
+print_r($a);

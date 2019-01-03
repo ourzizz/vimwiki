@@ -1,0 +1,3 @@
+array = Array()
+数组添加 array.append(x)
+删除     array.splice(index,len) len步长

@@ -1,0 +1,19 @@
+我们在使用idea开发的过程中经常会出现新建项目的时候直接把xxx.iml文件也添加到了git trace
+当然这并不会出现什么问题，问题是当我们把xxx.iml文件push到我们github上之后，然后在另一台电脑上pull了下来会出现一些问题，因为xxx.iml文件不是项目的源码。也就是说对于导入项目来说是多余的。
+正规的源码目录：
+　　src/
+　　pom.xml
+　　.ignore
+但是，我们又不能直接在本地删除xxx.iml。因为该文件是我们在本地开发的时候必须的。
+那么问题来了：我们要在保留本地文件的情况下，删除远程仓库的文件（程序员一定要通过技术手段来实现目的，捂脸笑）
+ok,废话不多说，下面是解决方案：
+　　把xxx.iml加到`.gitignore`里面忽略掉，然后提交使.gitignore生效，也既是
+　　git rm -r --cached xxx.iml　　//-r 是递归的意思   当最后面是文件夹的时候有用
+　　（git add xxx.iml）　　　　　 //若.gitignore文件中已经忽略了xxx.iml则可以不用执行此句
+　　git commit -m "ignore xxx.xml"
+　　git push
+问题搞定，愉快的开发吧。
+
+首先在.gitignore中添加要忽略的文件名称
+然后git rm -r --cached filename /.(全部) 
+再执行push就搞定
