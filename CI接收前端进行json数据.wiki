@@ -1,0 +1,18 @@
+1修改CI配置文件 支持json的特殊字符
+2小程序中
+qcloud.request({
+url: `${config.service.host}/weapp/Goods/get_goods_list_info/` + options.order_info, 
+header: { 'content-type': 'application/json'}, 
+})
+3CI端要进行解析url
+    public function get_goods_list_info($json) {
+        //$json = '{"goods_list":[{"goods_id":"5","count":"1"},{"goods_id":"4","count":"1"},{"goods_id":"1","count":"2"}],"cost":873}';
+        $jstr = urldecode($json);
+        $arr = json_decode($jstr,true);
+        $data = [];
+        for($i=0;$i < count($arr['goods_list']) ;$i=$i+1) {
+            $info = $this->goods_model->select_goods_by_goodsid($arr['goods_list'][$i]['goods_id']);
+            array_push($data,$info[0]);
+        }
+        $this->json($data);
+    }

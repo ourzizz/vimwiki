@@ -1,0 +1,6 @@
+经过测试如果 page data中有和wxml 双花括号内同名的变量，那么在setdata中进行绑定渲染后，data中的数据也获得了亦一样的值，所以不用再从新赋值
+
+有时候为了风格的统一，要消除buttom的边框，只能用下列方法
+button[class="sharebutton"]::after {
+  border: 0;
+} 

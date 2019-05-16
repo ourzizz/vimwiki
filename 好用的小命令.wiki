@@ -19,3 +19,5 @@ vim中的元字符\zs \ze
 [+ctrl+d 跳转到#define处
 ctrl+i 向前跳到前几次光标位置
 ctrl+o 向后跳到后几次光标位置]]
+
+目录比较 vimdiff <(cd ../bjks find . | sort) <(cd ../server find . | sort);;

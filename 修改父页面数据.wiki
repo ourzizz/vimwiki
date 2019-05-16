@@ -1,0 +1,11 @@
+set_father_page: function () {
+     pages = getCurrentPages();
+     currPage = pages[pages.length - 1]; //当前页面
+     prevPage = pages[pages.length - 2];//上一个页面//直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+     prevPage.setData({
+       user_default_address: this.data.address_list[1]
+     })
+     wx.navigateBack({
+       delta: 1
+     })
+},

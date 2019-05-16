@@ -14,12 +14,11 @@ Node.js对一些特殊用例进行优化，提供替代的API，使得V8在非�
 [[数据库配置]]
 [[页面跳转]]
 [[qcloud.request_中无法修改或保存_this.data或that.data数据]]
-经过测试如果 page data中有和wxml 双花括号内同名的变量，那么在setdata中进行绑定渲染后，data中的数据也获得了亦一样的值，所以不用再从新赋值
-
-有时候为了风格的统一，要消除buttom的边框，只能用下列方法
-button[class="sharebutton"]::after {
-  border: 0;
-} 
+[[消除button边框]]
+[[修改父页面数据]]
+[[CI接收前端进行json数据]]
+[[项目克隆绕坑]]
+[[CI关闭和开启日志]]
 
 hidden不要放block 否则失效，view统统用view
 小程序迁移，设置->主体信息->迁移

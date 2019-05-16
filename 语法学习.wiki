@@ -45,3 +45,15 @@ select Sno,AVG(Grade)
 from SC
 group by Sno;
 having AVG(Grade)>=90
+
+#联合主键
+create table goods_in_order (
+order_id varchar(30) comment '订单id',
+goods_id varchar(11) comment '商品id',
+count int comment '商品数量',
+size varchar(20),
+color varchar(30),
+evaluation varchar(300) comment '用户评价'
+primary key(order_id,goods_id)
+) engine = InnoDB, charset = utf8;
+

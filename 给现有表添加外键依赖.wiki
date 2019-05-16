@@ -8,3 +8,5 @@ ALTER TABLE STORE_FRONTINFO
 ALTER TABLE shop_cart 失败1215 原因是CAuth表中的open_id用了COLLAT utf8mb4_unicode_ci,建表的时候参照这个主键的类型也必须这么设置
   ADD CONSTRAINT FK_CART_USER_GOODS FOREIGN KEY (open_id)
   REFERENCES cSessionInfo (open_id); 
+  
+添加外键 error 1452 下级表中有数据的约束在父级表中没有找到

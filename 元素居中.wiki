@@ -1,0 +1,56 @@
+
+返回主页	
+Mr.Y
+Action speak louder than words.
+关于position:fixed;的居中问题
+
+通常情况下，我们通过操作margin来控制元素居中，代码如下：
+
+1 #name{
+2     maigin：0px auto;
+3 }
+
+但当我们把position设置为fixed时，例如：
+
+1 #id{
+2     position:fixed;
+3     margin:0px auto;
+4 }
+
+以上代码中的margin:0px auto;会出现失效问题，盒子并未居中。这是因为fixed会导致盒子脱离正常文档流。
+解决方法非常简单，只要应用如下代码即可：
+复制代码
+
+1 #name{
+2     position:fixed;
+3     margin:0px auto;
+4     right:0px;
+5     left:0px;
+6 }
+
+复制代码
+
+若希望上下也可以居中，可采用如下代码：
+复制代码
+
+1 #name{
+2     position:fixed;
+3     margin:auto;
+4     left:0;
+5     right:0;
+6     top:0;
+7     bottom:0;
+8 }
+
+复制代码
+
+万能居中法(未知大小呦)：
+复制代码
+
+1 #name{
+2       position:fixed;
+3       left:50%;
+4       top:50%;
+5       transform:translate(-50%,-50%);
+6       z-index:1000;      
+7 }
