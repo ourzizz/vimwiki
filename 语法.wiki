@@ -1,0 +1,12 @@
+[[查询结果键值对表示]]
+列出表的所有列
+Illuminate\Support\Facades\Schema::getColumnListring('users')
+更新数据表结构
+ php artisan make:migration alter_users_add_nickname --table=users 
+seeder说明
+1 php artisan make:seed XxTableSeeder
+ 在XxTableSeeder中写填充逻辑
+2 在DatabaseSeeder的run中$this->call(UsersTableSeeder::class);
+3 最后 composer dump-autoload 
+       php artisan db:seed
+

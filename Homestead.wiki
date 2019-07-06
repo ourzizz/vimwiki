@@ -1,0 +1,10 @@
+这个逼玩意儿整死人
+打包 vagrant packet
+添加 vagrant box add laravel/homestead ~/Downloads/virtualbox.box
+
+手动添加的会出现错误：
+Bringing machine 'homestead-7' up with 'virtualbox' provider...
+==> homestead-7: Box 'laravel/homestead' could not be found. Attempting to find             and install...
+提示找不到 laravel/homestead ，这是因为 手动安装homestead,在用户根目录下得到了C:\Users\Administrator.vagrant.d\boxes\laravel-VAGRANTSLASH-homestead\0
+修改C:\Users\Administrator\Homestead\scripts下的homestead.rb文件
+将  config.vm.box_version = settings["version"] ||= ">=5.2.0"  改为  config.vm.box_version = settings["version"] ||= ">=0"
