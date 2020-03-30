@@ -1,0 +1,8 @@
+PathAttribute 定义在路径A->B中间 数据表现形式
+stratx
+straty
+PathAttribute{}
+PathLine{}
+PathAttribute{}
+PathLine{}
+PathAttribute{}

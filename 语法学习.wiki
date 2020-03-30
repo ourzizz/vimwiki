@@ -57,3 +57,12 @@ evaluation varchar(300) comment '用户评价'
 primary key(order_id,goods_id)
 ) engine = InnoDB, charset = utf8;
 
+#联合主键 另设自增键
+CREATE TABLE IF NOT EXISTS `kaoshengbaomingt` (
+  `open_id` varchar(30) NOT NULL,
+  `ksid` varchar(5) NOT NULL,
+  `uqid` int(10) auto_increment NOT NULL,
+   PRIMARY KEY (`open_id`,`ksid`),
+   key(`uqid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+

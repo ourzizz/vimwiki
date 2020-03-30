@@ -1,0 +1,2 @@
+[[qtquick]]
+qtc++

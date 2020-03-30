@@ -1,0 +1,11 @@
+Git 怎么避免每次都要输入密码
+在 git bash 里输入命令：
+git config --global credential.helper store
+然后执行 git 操作，输入一遍密码后就会记录密码，以后就不用输入了。
+那么要更改记录的用户名和密码怎么办呢？
+因为上面的命令会在你的用户目录下新建个 .git-credentials 文件，我们只需要更改这个文件即可。
+
+找到自己的用户目录 .git-credentials文件。
+————————————————
+版权声明：本文为CSDN博主「小妖666」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_38883338/article/details/88675546

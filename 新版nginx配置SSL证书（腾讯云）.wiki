@@ -1,3 +1,6 @@
-https://blog.csdn.net/qq_31201781/article/details/78905304
+ https://blog.csdn.net/qq_31201781/article/details/78905304
+ ps -ef |grep nginx 就能找到nginx的配置文件了
+ 百度搜nginx配置文件路径
+ /usr/local/nginx/conf/nginx.conf
 修改 就是将NGInx中的证书放到服务器上，然后修改 /etc/nginx/sites-available/default 配置文件直接用自己的吧！
 证书放置目录/etc/niginx下

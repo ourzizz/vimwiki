@@ -1,0 +1,3 @@
+在compose.json 文件的requre 中添加"qcloudsms/qcloudsms_php": "0.1.*"
+执行compose install 第一次安装依赖
+执行compose update 以往执行过 只是更新
