@@ -1,0 +1,9 @@
+小程序端 用stringify 发送数据到后台
+        url: `${config.service.host}/HouseOwner/storageOwner/`,
+        data: {
+          ownerInfo: JSON.stringify(that.data.ownerInfo)
+        },
+        method: 'POST',
+服务端 用$$get = json_decode($$_POST[ownerInfo]);        
+
+CI路径 目录首字母小写 后面大小写敏感，控制函数可全小写

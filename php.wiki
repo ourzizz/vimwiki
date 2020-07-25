@@ -1,2 +1,12 @@
 [[php读MySQL乱码解决]]
 [[php数组]]
+tcent sdk DB:: 返回的是standclass 访问需要使用 $res->xxxx访问
+$res[1]=b
+$res[2]=a
+$this->json($$res)
+前端拿到的结果是{1:b,2:a}
+json_decode($_POST['admInfo'],true);
+$repair['pubTime'] =  date("Y-m-d H:i:s",time()); ==
+$temp = (DB::raw($sql))->fetchAll(PDO::FETCH_ASSOC); ==数组形式返回
+$temp = (DB::raw($sql))->fetchAll(PDO::FETCH_ASOBJ); ==对象式返回
+$voteTime =  date("Y-m-d H:i:s",time()); ==
