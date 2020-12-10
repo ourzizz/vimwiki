@@ -3,3 +3,5 @@
 * [[nginx:NO_input_file_specified]]
 * [[nginx:oneinstack配置]]
 * [[nginx:laravel配置]]
+nginx -t 直接查看配置文件路径
+nginx 可以配置多个站点 需要域名解析到多个二级域名，每个二级域名 做一个配置文件，最后include到主配置文件中就通了

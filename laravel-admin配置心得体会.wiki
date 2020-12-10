@@ -1,0 +1,5 @@
+1 npm install 失败了就只有删除node_modles 再装 直到成功
+2 npm run dev ubuntu环境是大小写敏感的 app.vue index.js 中是"App.vue" 所以需要改app.vue cp App.vue
+3 nginx 配置多站点 这个还需要研究下
+    nginx locate / 配置错误会导致路由失败 404
+4 本机环境laravel 路由大小写敏感 web.php 中loginController LoginController
